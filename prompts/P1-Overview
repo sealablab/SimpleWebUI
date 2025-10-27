@@ -1,0 +1,42 @@
+
+# P1 - Project Overview
+
+**VoloApp** is a hardware abstraction layer for deploying FPGA applications to Moku platform with human-friendly register interfaces. At present it supports a **very** limited set of 'volo-app' compatible types. 
+
+## VOLO-APP datatypes (current)
+
+| Type | Pydantic Enum | VHDL Type | Bit Range | Value Range |
+|------|---------------|-----------|-----------|-------------|
+| **8-bit Counter** | `COUNTER_8BIT` | `std_logic_vector(7 downto 0)` | `(7 downto 0)` | 0-255 |
+| **Percent** | `PERCENT` | `std_logic_vector(6 downto 0)` | `(6 downto 0)` | 0-100 |
+| **Button** | `BUTTON` | `std_logic` | `(0)` | 0 or 1 |
+
+
+## MOKU-Models
+A set of pydantic models describing the MCC infrastructure is located at ./models/moku_models
+
+## VOLO-Models
+A set of pydantic models describing the MCC infrastructure is located at ./models/volo_models
+
+## VOLO-App example
+A sample manifest file is located at 
+@DS1120-PD_app.yaml
+
+
+## Your task:
+I would like you to help me select a framework that can
+- auto-generate simple web-uis given 
+a) an input manifest file 
+b) access to the relevant pydantic models
+
+## Priorities
+Chosen framework should:
+
+### P1: Be modern python 3.10+ 
+ - integrate nicely with the tech stack layed out in @pyproject.toml
+
+ - provide quick iteration
+
+ - supporting generating a text based UI would be a big plus
+
+ 
